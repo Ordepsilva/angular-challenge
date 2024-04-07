@@ -1,0 +1,15 @@
+<button
+  [type]="type"
+  class="btn"
+  [ngClass]="{
+    disabled: disabled,
+    'btn-primary': primary,
+    'btn-secondary': secondary,
+    'btn-tertiary': tertiary,
+    'btn-outlined': outlined,
+    'large':large,
+  }"
+  (click)="handleClick()"
+>
+  {{ label }}
+</button>
