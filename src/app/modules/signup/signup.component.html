@@ -1,0 +1,48 @@
+<div class="container">
+  <mat-icon class="close-icon">close</mat-icon>
+  <div class="left-side">
+    <div class="logo"></div>
+    <div class="form flex">
+      <div class="header">
+        <h2>Choose Your Preferred Way To Create An Account</h2>
+      </div>
+      <div class="form"></div>
+    </div>
+    <div class="actions flex-column">
+      <h4 style="color: #26272b">Or Create An Account With</h4>
+      <div>
+        <!-- TODO: create a component for logo buttons? -->
+        <app-button
+          [hasIcon]="true"
+          iconPos="left"
+          label="Microsoft"
+          icon=""
+        ></app-button>
+        <app-button
+          [hasIcon]="true"
+          iconPos="left"
+          label="Google"
+          icon=""
+        ></app-button>
+        <app-button
+          [hasIcon]="true"
+          iconPos="left"
+          label="Slack"
+          icon=""
+        ></app-button>
+      </div>
+    </div>
+    <div class="guided-flow">
+      <app-signup-bottom-bar
+        [currentStep]="currentStep"
+      ></app-signup-bottom-bar>
+    </div>
+  </div>
+  <div class="right-side">
+    <app-progress-indicator
+      class="signup-progress-indicator"
+      [vertical]="true"
+      [currentStep]="currentStep"
+    ></app-progress-indicator>
+  </div>
+</div>

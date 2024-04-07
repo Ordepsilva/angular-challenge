@@ -1,0 +1,24 @@
+<div class="signup-flow flex">
+  <div class="buttons-wrapper">
+    <app-button
+      *ngIf="currentStep > 1"
+      label="Go Back"
+      [outlined]="true"
+      [primary]="true"
+      (click)="handleGoBack()"
+    ></app-button>
+
+    <app-button
+      [label]="getButtonLabel(currentStep)"
+      [outlined]="true"
+      [primary]="true"
+      (click)="handleNext()"
+    ></app-button>
+  </div>
+
+  <app-progress-indicator
+    class="progress-indicator"
+    [backgroundColor]="'var(--grey-color)'"
+    [currentStep]="currentStep"
+  ></app-progress-indicator>
+</div>
