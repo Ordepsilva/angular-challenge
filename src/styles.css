@@ -1,0 +1,79 @@
+:root {
+  --primary-color: #0131f5;
+  --secondary-color: #0021a3;
+  --tertiary-color: #00156a;
+  --success-color: #08c282;
+  --danger-color: #d40c1b;
+  --light-red-color: #f33543;
+  --clear-day-color: #d8fdf0;
+  --azure-color: #f0fffa;
+  --grey-color: #dfdfe2;
+  --light-grey-color: #9f9fa8;
+}
+
+@font-face {
+  font-family: "PolySansNeutral";
+  src: url("../src/assets/fonts/PolySansNeutral.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PolySansSlim";
+  src: url("../src/assets/fonts/PolySansSlim.ttf") format("truetype");
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "PolySansSlim";
+}
+
+h1 {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  letter-spacing: -0.125rem;
+  margin: 0;
+}
+h2 {
+  font-size: 32px;
+  margin: 0;
+  line-height: 40px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-aligned {
+  display: flex;
+  align-items: center;
+}
+
+.flex-centered {
+  display: flex;
+  justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.gap-12 {
+  gap: 12px;
+}
+
+.gap-24 {
+  gap: 24px;
+}

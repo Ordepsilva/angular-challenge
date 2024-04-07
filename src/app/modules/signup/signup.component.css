@@ -13,12 +13,33 @@
   display: grid;
 }
 
+.left-side {
+  grid-template-rows: repeat(3, 1fr);
+}
+
 .right-side {
   background-image: url("../../../assets/images/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 24px 24px 24px 0;
   align-items: center;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 0 24px;
+  gap: 24px;
+}
+
+.break-text {
+  white-space: nowrap;
+}
+
+.connections-label {
+  font-size: 18px;
+  font-family: "PolySansSlim";
 }
 
 .close-icon {
@@ -40,8 +61,23 @@
 }
 
 .guided-flow {
-  width: 100%;
-  align-content: end;
+  align-self: end;
+}
+
+.logo {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+}
+
+@media (max-width: 480px) {
+  .left-side {
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .break-text {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 1000px) {

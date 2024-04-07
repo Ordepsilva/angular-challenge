@@ -1,37 +1,42 @@
 <div class="container">
   <mat-icon class="close-icon">close</mat-icon>
   <div class="left-side">
-    <div class="logo"></div>
-    <div class="form flex">
-      <div class="header">
-        <h2>Choose Your Preferred Way To Create An Account</h2>
-      </div>
-      <div class="form"></div>
+    <div>
+      <img src="assets/images/shelter-logo.png" alt="Logo" class="logo" />
     </div>
-    <div class="actions flex-column">
-      <h4 style="color: #26272b">Or Create An Account With</h4>
-      <div>
-        <!-- TODO: create a component for logo buttons? -->
-        <app-button
-          [hasIcon]="true"
-          iconPos="left"
-          label="Microsoft"
-          icon=""
-        ></app-button>
-        <app-button
-          [hasIcon]="true"
-          iconPos="left"
-          label="Google"
-          icon=""
-        ></app-button>
-        <app-button
-          [hasIcon]="true"
-          iconPos="left"
-          label="Slack"
-          icon=""
-        ></app-button>
+    <div class="form-wrapper flex">
+      <div class="form-header">
+        <h2 class="break-text">Choose Your<br />Preferred Way</h2>
+        <h2>To Create An Account</h2>
+      </div>
+      <div class="email-wrapper"></div>
+      <div class="connections flex-column gap-12">
+        <span class="connections-label" style="color: #26272b"
+          >Or Create An Account With</span
+        >
+        <div class="connections-buttons flex gap-12">
+          <app-button
+            [hasIcon]="true"
+            iconPos="left"
+            label="Microsoft"
+            icon=""
+          ></app-button>
+          <app-button
+            [hasIcon]="true"
+            iconPos="left"
+            label="Google"
+            icon=""
+          ></app-button>
+          <app-button
+            [hasIcon]="true"
+            iconPos="left"
+            label="Slack"
+            icon=""
+          ></app-button>
+        </div>
       </div>
     </div>
+
     <div class="guided-flow">
       <app-signup-bottom-bar
         [currentStep]="currentStep"
