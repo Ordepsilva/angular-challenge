@@ -1,24 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
+import { IconPosition } from '../../enums/icon-position.enum';
+import { ButtonType } from '../../enums/button-type.enum';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIcon],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css',
 })
 export class ButtonComponent {
   @Input() label: string = 'Button Text';
-  @Input() type: string = 'button'; //'button', 'submit', or 'reset'
+  @Input() type: ButtonType = ButtonType.Button;
   @Input() disabled: boolean = false;
+  @Input() customStyle: string = 'primary';
+  @Input() iconDescription: string = '';
   @Input() large: boolean = false;
-  @Input() outlined: boolean = false;
+
+  @Input() outlined: boolean = false; //TODO: Replace all variables with style
   @Input() primary: boolean = false;
   @Input() secondary: boolean = false;
   @Input() tertiary: boolean = false;
-  @Input() icon: string = '';
-  @Input() iconPos = 'left';
+
+  @Input() matIcon: string = '';
+  @Input() svgIcon: string = '';
+  @Input() iconPos: IconPosition = IconPosition.Left;
   @Input() hasIcon: boolean = false;
 
   @Output() click = new EventEmitter<string>();

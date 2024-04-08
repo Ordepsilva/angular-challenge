@@ -2,6 +2,7 @@
   [type]="type"
   class="btn"
   [ngClass]="{
+    customStyle,
     disabled: disabled,
     'primary': primary,
     'secondary': secondary,
@@ -11,5 +12,25 @@
   }"
   (click)="handleClick()"
 >
-  {{ label }}
+  <ng-container *ngIf="hasIcon && iconPos == 'left'">
+    <mat-icon *ngIf="matIcon">{{ matIcon }}</mat-icon>
+    <img
+      class="svg-icon"
+      *ngIf="svgIcon"
+      src="{{ svgIcon }}"
+      alt="{{ iconDescription }}"
+    />
+  </ng-container>
+
+  <h4>{{ label }}</h4>
+
+  <ng-container *ngIf="hasIcon && iconPos == 'right'">
+    <mat-icon *ngIf="matIcon">{{ matIcon }}</mat-icon>
+    <img
+      class="svg-icon"
+      *ngIf="svgIcon"
+      src="{{ svgIcon }}"
+      alt="{{ iconDescription }}"
+    />
+  </ng-container>
 </button>

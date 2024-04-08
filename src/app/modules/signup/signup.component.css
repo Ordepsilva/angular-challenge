@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding: 0 24px;
+  padding: 0 10%;
   gap: 24px;
 }
 
@@ -39,6 +39,7 @@
 
 .connections-label {
   font-size: 18px;
+  color: #26272b;
   font-family: "PolySansSlim";
 }
 
@@ -65,7 +66,7 @@
 }
 
 .logo {
-  position: fixed;
+  position: relative;
   top: 24px;
   left: 24px;
 }
@@ -75,8 +76,12 @@
     grid-template-rows: repeat(3, auto);
   }
 
-  .break-text {
-    white-space: normal;
+  .form-wrapper {
+    padding: 0 24px;
+  }
+  
+  .connections-buttons {
+    flex-wrap: wrap;
   }
 }
 

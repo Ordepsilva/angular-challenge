@@ -1,13 +1,18 @@
 <div class="container">
   <mat-icon class="close-icon">close</mat-icon>
   <div class="left-side">
-    <div>
+    <div class="logo-wrapper">
       <img src="assets/images/shelter-logo.png" alt="Logo" class="logo" />
     </div>
     <div class="form-wrapper flex">
       <div class="form-header">
-        <h2 class="break-text">Choose Your<br />Preferred Way</h2>
-        <h2>To Create An Account</h2>
+        <h2
+          [innerHTML]="
+            screenWidth < 480
+              ? 'Choose Your <br /> Preferred Way <br /> To Create An Account'
+              : 'Choose Your Preferred Way <br /> To Create An Account'
+          "
+        ></h2>
       </div>
       <div class="email-wrapper"></div>
       <div class="connections flex-column gap-12">
@@ -16,22 +21,27 @@
         >
         <div class="connections-buttons flex gap-12">
           <app-button
-            [hasIcon]="true"
-            iconPos="left"
             label="Microsoft"
-            icon=""
+            svgIcon="assets/images/microsoft-icon.svg"
+            iconDescription="Sign up with Microsoft"
+            [hasIcon]="true"
+            (click)="handleMicrosoftSignup()"
           ></app-button>
           <app-button
-            [hasIcon]="true"
-            iconPos="left"
             label="Google"
-            icon=""
+            svgIcon="assets/images/google-icon.svg"
+            iconDescription="Sign up with Google"
+            customStyle="svg-icon-signup"
+            [hasIcon]="true"
+            (click)="handleGoogleSignup()"
           ></app-button>
           <app-button
-            [hasIcon]="true"
-            iconPos="left"
             label="Slack"
-            icon=""
+            iconDescription="Sign up with Slack"
+            svgIcon="assets/images/slack-icon.svg"
+            customStyle="svg-icon-signup"
+            [hasIcon]="true"
+            (click)="handleSlackSignup()"
           ></app-button>
         </div>
       </div>

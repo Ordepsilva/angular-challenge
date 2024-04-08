@@ -30,14 +30,14 @@ body {
 }
 
 h1 {
-  font-size: 3.125rem;
+  font-size: 3.125em;
   color: var(--gray-900);
   font-weight: 500;
-  letter-spacing: -0.125rem;
+  letter-spacing: -0.125em;
   margin: 0;
 }
 h2 {
-  font-size: 32px;
+  font-size: 2em;
   margin: 0;
   line-height: 40px;
 }
@@ -45,6 +45,8 @@ h2 {
 h4 {
   font-size: 18px;
   font-weight: 400;
+  margin: 0;
+  line-height: 18px;
 }
 
 .flex {
@@ -54,16 +56,6 @@ h4 {
 .flex-column {
   display: flex;
   flex-direction: column;
-}
-
-.flex-aligned {
-  display: flex;
-  align-items: center;
-}
-
-.flex-centered {
-  display: flex;
-  justify-content: center;
 }
 
 .pointer {

@@ -1,5 +1,8 @@
 .btn {
-  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
   border: none;
   border-radius: 40px;
   cursor: pointer;
@@ -8,7 +11,9 @@
   font-family: "PolySansSlim";
 }
 
-/* TODO: For better responsiveness use relative size instead of pixels. */
+/* TODO: For better responsiveness use relative size instead of pixels. 
+    Create other button styles
+*/
 
 .btn.disabled {
   cursor: default;
@@ -27,13 +32,14 @@
 }
 
 .primary.outlined {
-  border: var(--primary-color);
+  border: 1px solid var(--primary-color) !important;
+  border-radius: 40px;
   background-color: white;
   color: var(--primary-color);
 }
 
 .secondary.outlined {
-  border: var(--secondary-color);
+  border: 1px solid var(--secondary-color) !important;
   background-color: white;
   color: var(--secondary-color);
 }
@@ -48,4 +54,14 @@
   padding: 12px 24px;
   font-size: 18px;
   line-height: 28px;
+}
+
+.svg-icon{
+  width: 21px;
+  height: 21px;
+}
+
+.outlined-grey {
+  border: 1px solid #c9c9ce !important ;
+  background-color: white !important;
 }
