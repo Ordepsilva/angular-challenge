@@ -5,28 +5,45 @@
   cursor: pointer;
   font-size: 16px;
   line-height: 24px;
+  font-family: "PolySansSlim";
 }
+
+/* TODO: For better responsiveness use relative size instead of pixels. */
 
 .btn.disabled {
-  opacity: 0.5;
   cursor: default;
+  background-color: #f4f4f4;
+  color: var(--light-grey-color);
 }
 
-.btn-primary {
+.primary {
   background-color: var(--primary-color);
   color: white;
 }
 
-.btn-secondary {
+.secondary {
   background-color: var(--secondary-color);
   color: white;
 }
 
-.btn-primary.outlined {
+.primary.outlined {
   border: var(--primary-color);
   background-color: white;
   color: var(--primary-color);
 }
+
+.secondary.outlined {
+  border: var(--secondary-color);
+  background-color: white;
+  color: var(--secondary-color);
+}
+
+.tertiary.outlined {
+  border: var(--tertiary-color);
+  background-color: white;
+  color: var(--tertiary-color);
+}
+
 .large {
   padding: 12px 24px;
   font-size: 18px;

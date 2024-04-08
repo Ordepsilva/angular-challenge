@@ -1,0 +1,30 @@
+.signup-flow {
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+  }
+  
+  .buttons-wrapper {
+    gap: 16px;
+  }
+  
+  @media (max-width: 480px) {
+    .signup-flow {
+      flex-direction: column;
+      align-items: start;
+      gap: 24px;
+    }
+    .progress-wrapper {
+      order: 1;
+    }
+    .buttons-wrapper {
+      order: 2;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .progress-indicator {
+      display: none;
+    }
+  }
+  
