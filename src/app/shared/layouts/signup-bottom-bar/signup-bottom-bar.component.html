@@ -1,16 +1,15 @@
 <div class="signup-flow flex">
-  <div class="buttons-wrapper">
+  <div class="buttons-wrapper flex">
     <app-button
       *ngIf="currentStep > 1"
       label="Go Back"
-      [outlined]="true"
-      [primary]="true"
+      customStyle="primary outlined"
       (click)="handleGoBack()"
     ></app-button>
 
     <app-button
       [label]="getButtonLabel(currentStep)"
-      [primary]="true"
+      customStyle="primary "
       (click)="handleNext()"
     ></app-button>
   </div>

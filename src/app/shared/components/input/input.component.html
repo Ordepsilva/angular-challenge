@@ -1,1 +1,11 @@
-<p>input works!</p>
+<div class="input-wrapper">
+  <label *ngIf="label" [class.invalid]="invalid">{{ label }}</label>
+  <input
+    type="{{ inputType }}"
+    [placeholder]="placeholder"
+    [disabled]="disabled"
+    [class.invalid]="invalid"
+    [ngClass]="customClass"
+    (input)="onInputChange($event)"
+  />
+</div>

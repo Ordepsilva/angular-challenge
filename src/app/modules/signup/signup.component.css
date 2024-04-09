@@ -30,7 +30,7 @@
   flex-direction: column;
   align-self: center;
   padding: 0 10%;
-  gap: 24px;
+  gap: 48px;
 }
 
 .break-text {
@@ -71,6 +71,10 @@
   left: 24px;
 }
 
+.email-wrapper {
+  width: 350px;
+}
+
 @media (max-width: 480px) {
   .left-side {
     grid-template-rows: repeat(3, auto);
@@ -79,9 +83,13 @@
   .form-wrapper {
     padding: 0 24px;
   }
-  
+
   .connections-buttons {
     flex-wrap: wrap;
+  }
+
+  .email-wrapper {
+    width: 90%;
   }
 }
 

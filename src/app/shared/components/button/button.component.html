@@ -1,15 +1,11 @@
 <button
   [type]="type"
-  class="btn"
+  class="btn {{customStyle}}"
   [ngClass]="{
-    customStyle,
     disabled: disabled,
-    'primary': primary,
-    'secondary': secondary,
-    'tertiary': tertiary,
-    'outlined': outlined,
     'large':large,
   }"
+  [disabled]="disabled"
   (click)="handleClick()"
 >
   <ng-container *ngIf="hasIcon && iconPos == 'left'">

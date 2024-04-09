@@ -19,11 +19,6 @@ export class ButtonComponent {
   @Input() iconDescription: string = '';
   @Input() large: boolean = false;
 
-  @Input() outlined: boolean = false; //TODO: Replace all variables with style
-  @Input() primary: boolean = false;
-  @Input() secondary: boolean = false;
-  @Input() tertiary: boolean = false;
-
   @Input() matIcon: string = '';
   @Input() svgIcon: string = '';
   @Input() iconPos: IconPosition = IconPosition.Left;
@@ -37,7 +32,7 @@ export class ButtonComponent {
 
   handleClick() {
     if (!this.disabled) {
-      this.click.emit('clicked');
+      console.log('asd');
     }
   }
 }

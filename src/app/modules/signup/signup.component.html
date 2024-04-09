@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-icon class="close-icon">close</mat-icon>
+  <mat-icon class="close-icon pointer">close</mat-icon>
   <div class="left-side">
     <div class="logo-wrapper">
       <img src="assets/images/shelter-logo.png" alt="Logo" class="logo" />
@@ -14,7 +14,14 @@
           "
         ></h2>
       </div>
-      <div class="email-wrapper"></div>
+      <div class="email-wrapper">
+        <app-input
+          label="Email Address"
+          placeholder="hello@broker.com"
+          [invalid]="invalidEmail"
+          (valueChange)="handleEmailInput($event)"
+        ></app-input>
+      </div>
       <div class="connections flex-column gap-12">
         <span class="connections-label" style="color: #26272b"
           >Or Create An Account With</span
@@ -24,6 +31,7 @@
             label="Microsoft"
             svgIcon="assets/images/microsoft-icon.svg"
             iconDescription="Sign up with Microsoft"
+            customStyle="outlined-grey"
             [hasIcon]="true"
             (click)="handleMicrosoftSignup()"
           ></app-button>
@@ -31,7 +39,7 @@
             label="Google"
             svgIcon="assets/images/google-icon.svg"
             iconDescription="Sign up with Google"
-            customStyle="svg-icon-signup"
+            customStyle="outlined-grey"
             [hasIcon]="true"
             (click)="handleGoogleSignup()"
           ></app-button>
@@ -39,7 +47,7 @@
             label="Slack"
             iconDescription="Sign up with Slack"
             svgIcon="assets/images/slack-icon.svg"
-            customStyle="svg-icon-signup"
+            customStyle="outlined-grey"
             [hasIcon]="true"
             (click)="handleSlackSignup()"
           ></app-button>
@@ -50,6 +58,8 @@
     <div class="guided-flow">
       <app-signup-bottom-bar
         [currentStep]="currentStep"
+        (clickNext)="handleNextStep()"
+        (clickBack)="handleGoBack()"
       ></app-signup-bottom-bar>
     </div>
   </div>

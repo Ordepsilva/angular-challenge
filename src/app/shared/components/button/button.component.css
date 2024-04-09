@@ -1,6 +1,5 @@
 .btn {
   display: flex;
-  align-items: center;
   gap: 12px;
   padding: 16px 24px;
   border: none;
@@ -12,7 +11,6 @@
 }
 
 /* TODO: For better responsiveness use relative size instead of pixels. 
-    Create other button styles
 */
 
 .btn.disabled {
@@ -24,6 +22,17 @@
 .primary {
   background-color: var(--primary-color);
   color: white;
+}
+
+.btn:hover,
+.primary:hover,
+.secondary:hover,
+.primary.outlined:hover {
+  transform: scale(1.05);
+}
+
+.btn.disabled:hover {
+  transform: none;
 }
 
 .secondary {
@@ -56,12 +65,12 @@
   line-height: 28px;
 }
 
-.svg-icon{
+.svg-icon {
   width: 21px;
   height: 21px;
 }
 
 .outlined-grey {
-  border: 1px solid #c9c9ce !important ;
+  border: 1.4px solid #c9c9ce !important ;
   background-color: white !important;
 }
