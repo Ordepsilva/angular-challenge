@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fill-available;
+  padding: 24px;
+  gap: 24px;
+}
+
+.container > iframe {
+  flex-grow: 1;
+}
+.message {
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -1,4 +1,3 @@
-<div class="progress-indicator" [ngClass]="{ 'vertical': vertical }">
-    <span *ngFor="let step of getSteps()" [ngStyle]="getStepStyle(step)"></span>
-  </div>
-  
+<div class="progress-indicator" [ngClass]="{ vertical: vertical }">
+  <span *ngFor="let step of getSteps()" [ngStyle]="getStepStyle(step)"></span>
+</div>

@@ -1,3 +1,11 @@
+import {
+  animate,
+  query,
+  stagger,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
@@ -8,12 +16,14 @@ import { Component, Input } from '@angular/core';
   templateUrl: './progress-indicator.component.html',
   styleUrl: './progress-indicator.component.css',
 })
+
 export class ProgressIndicatorComponent {
   @Input() currentStep: number = 1;
   @Input() numberOfSteps: number = 4;
   @Input() activeStepColor: string = 'blue';
   @Input() vertical: boolean = false;
   @Input() backgroundColor: string = 'white';
+  @Input() animationDelay: number = 0;
 
   constructor() {}
 

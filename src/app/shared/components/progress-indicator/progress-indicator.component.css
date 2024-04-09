@@ -1,22 +1,23 @@
 .progress-indicator {
-    display: flex;
-    gap: 16px;
-    width: fit-content;
-  }
-  
-  .progress-indicator span {
-    width: 60px;
-    height: 8px;
-    border-radius: 10px;
-  }
-  
-  .progress-indicator.vertical {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .progress-indicator.vertical span {
-    height: 3.75em;
-    width: 0.5em;
-  }
-  
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.progress-indicator span {
+  width: 60px;
+  height: 8px;
+  border-radius: 10px;
+}
+
+.progress-indicator.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.progress-indicator.vertical span {
+  height: 60px;
+  width: 8px;
+}

@@ -9,7 +9,7 @@ label {
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
-  font-family: "PolySansSlim";
+  font-family: "PolySansNeutral";
 }
 
 input {
@@ -20,7 +20,8 @@ input {
   font-size: 16px;
 }
 
-input.invalid {
+input.invalid,
+input.invalid::placeholder {
   border-color: red;
   color: red;
 }

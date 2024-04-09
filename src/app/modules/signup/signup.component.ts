@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ProgressIndicatorComponent } from '../../shared/components/progress-indicator/progress-indicator.component';
 import { SignupBottomBarComponent } from '../../shared/layouts/signup-bottom-bar/signup-bottom-bar.component';
 import { InputComponent } from '../../shared/components/input/input.component';
+
 import {
   animate,
   query,
@@ -13,6 +14,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -26,36 +28,45 @@ import {
     InputComponent,
   ],
   animations: [
-    trigger('fadeInOut', [
-      transition('* => *', [
+    trigger('enterAnimation', [
+      transition(':enter', [
+        query('.animate', style({ opacity: 0 })),
         query(
-          ':enter',
-          [
-            style({ opacity: 0, transform: 'translateY(-20px)' }),
-            stagger(100, [
-              animate(
-                '0.5s ease-in-out',
-                style({ opacity: 1, transform: 'translateY(0)' })
-              ),
-            ]),
-          ],
-          { optional: true }
+          '.animate',
+          stagger('150ms', [animate('150ms ease-in', style({ opacity: 1 }))])
         ),
+        query('.guided-flow', [
+          animate(
+            '300ms ease-out',
+            style({ transform: 'translateY(0) scale(1)', opacity: 1 })
+          ),
+          style({ transform: 'translateY(100%) scale(0.8)' }),
+        ]),
       ]),
     ]),
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   currentStep: number = 1;
-  screenWidth: number = 1000;
+  screenWidth: number = 480;
   invalidEmail: boolean = false;
   email: string = '';
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.screenWidth = window.innerWidth; // Get initial screen width on load
+  }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = event.target.innerWidth;
+  }
+
+  handleCloseIcon() {
+    this.router.navigate(['/home']);
   }
 
   handleMicrosoftSignup() {
@@ -72,7 +83,7 @@ export class SignupComponent {
 
   validateEmail(email: string): boolean {
     const emailValidator = /\S+@\S+\.\S+/;
-    return emailValidator.test(email);
+    return emailValidator.test(email) && this.isDomainAllowed(email);
   }
 
   isDomainAllowed(email: string): boolean {
@@ -83,11 +94,14 @@ export class SignupComponent {
 
   handleEmailInput(input: string): void {
     this.email = input;
+
+    if (this.invalidEmail) {
+      this.invalidEmail = !this.validateEmail(this.email);
+    }
   }
 
   handleNextStep() {
-    this.invalidEmail =
-      !this.validateEmail(this.email) || !this.isDomainAllowed(this.email);
+    this.invalidEmail = !this.validateEmail(this.email);
 
     if (!this.invalidEmail) {
       this.currentStep = this.currentStep + 1;

@@ -16,12 +16,10 @@ export class ButtonComponent {
   @Input() type: ButtonType = ButtonType.Button;
   @Input() disabled: boolean = false;
   @Input() customStyle: string = 'primary';
-  @Input() iconDescription: string = '';
-  @Input() large: boolean = false;
-
   @Input() matIcon: string = '';
   @Input() svgIcon: string = '';
   @Input() iconPos: IconPosition = IconPosition.Left;
+  @Input() iconDescription: string = '';
   @Input() hasIcon: boolean = false;
 
   @Output() click = new EventEmitter<string>();
@@ -32,7 +30,6 @@ export class ButtonComponent {
 
   handleClick() {
     if (!this.disabled) {
-      console.log('asd');
     }
   }
 }

@@ -1,12 +1,15 @@
-<div class="container">
-  <mat-icon class="close-icon pointer">close</mat-icon>
+<div class="container" #signupContainer [@enterAnimation]>
+  <mat-icon class="close-icon pointer animate" (click)="handleCloseIcon()"
+    >close</mat-icon
+  >
   <div class="left-side">
-    <div class="logo-wrapper">
+    <div class="logo-wrapper animate">
       <img src="assets/images/shelter-logo.png" alt="Logo" class="logo" />
     </div>
     <div class="form-wrapper flex">
-      <div class="form-header">
+      <div class="form-header animate">
         <h2
+          class="title"
           [innerHTML]="
             screenWidth < 480
               ? 'Choose Your <br /> Preferred Way <br /> To Create An Account'
@@ -14,7 +17,7 @@
           "
         ></h2>
       </div>
-      <div class="email-wrapper">
+      <div class="email-wrapper animate">
         <app-input
           label="Email Address"
           placeholder="hello@broker.com"
@@ -22,11 +25,11 @@
           (valueChange)="handleEmailInput($event)"
         ></app-input>
       </div>
-      <div class="connections flex-column gap-12">
+      <div class="connections flex-column gap-12 animate">
         <span class="connections-label" style="color: #26272b"
           >Or Create An Account With</span
         >
-        <div class="connections-buttons flex gap-12">
+        <div class="connections-buttons flex gap-12 animate">
           <app-button
             label="Microsoft"
             svgIcon="assets/images/microsoft-icon.svg"
@@ -55,7 +58,7 @@
       </div>
     </div>
 
-    <div class="guided-flow">
+    <div class="guided-flow animate">
       <app-signup-bottom-bar
         [currentStep]="currentStep"
         (clickNext)="handleNextStep()"
@@ -65,7 +68,7 @@
   </div>
   <div class="right-side">
     <app-progress-indicator
-      class="signup-progress-indicator"
+      class="signup-progress-indicator animate"
       [vertical]="true"
       [currentStep]="currentStep"
     ></app-progress-indicator>

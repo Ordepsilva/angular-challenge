@@ -3,9 +3,6 @@
   grid-template-columns: 60% 40%;
   background-color: #ffffff;
   height: 100%;
-  width: 100%;
-  margin: 0;
-  position: relative;
 }
 
 .left-side,
@@ -14,11 +11,12 @@
 }
 
 .left-side {
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
 }
 
 .right-side {
   background-image: url("../../../assets/images/bg.png");
+  max-width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 24px 24px 24px 0;
@@ -40,7 +38,7 @@
 .connections-label {
   font-size: 18px;
   color: #26272b;
-  font-family: "PolySansSlim";
+  font-family: "PolySansNeutral";
 }
 
 .close-icon {
@@ -63,6 +61,7 @@
 
 .guided-flow {
   align-self: end;
+  width: 100%;
 }
 
 .logo {
@@ -75,6 +74,7 @@
   width: 350px;
 }
 
+
 @media (max-width: 480px) {
   .left-side {
     grid-template-rows: repeat(3, auto);
@@ -82,6 +82,7 @@
 
   .form-wrapper {
     padding: 0 24px;
+    gap: 24px;
   }
 
   .connections-buttons {

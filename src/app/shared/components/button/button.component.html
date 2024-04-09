@@ -1,9 +1,8 @@
 <button
   [type]="type"
-  class="btn {{customStyle}}"
+  class="btn {{ customStyle }}"
   [ngClass]="{
     disabled: disabled,
-    'large':large,
   }"
   [disabled]="disabled"
   (click)="handleClick()"
